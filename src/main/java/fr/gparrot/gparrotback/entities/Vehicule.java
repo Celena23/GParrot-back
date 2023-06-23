@@ -1,7 +1,9 @@
 package fr.gparrot.gparrotback.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonTypeId;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,10 +15,13 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
+@Entity
 public class Vehicule {
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String marque;
+//    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate miseCirculation;
     private Float kilometrage;
     private String description;
@@ -28,6 +33,7 @@ public class Vehicule {
     private String co2;
     private String couleur;
     private Float prix;
+//    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dateVente;
-    private String photos;
+
 }
