@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Getter
@@ -35,5 +36,7 @@ public class Vehicule {
     private Float prix;
 //    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dateVente;
+    @OneToMany(mappedBy = "vehicule")
+    private List <Photo> photo;
 
 }
