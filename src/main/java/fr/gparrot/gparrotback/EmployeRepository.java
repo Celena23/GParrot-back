@@ -14,4 +14,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(collectionResourceRel = "employe", path = "employe")
 @CrossOrigin(origins="*")
 public interface EmployeRepository extends JpaRepository<Employe, Long> {
+    boolean existsByIdentifierAndPassword(String identifier, String password);
 }
